@@ -92,6 +92,10 @@ fit.lasso <- train(y=datatrain$logrevenue,x=datatrain[,c(6:42,50)],
 fit.lasso
 predictors(fit.lasso)
 
+# chosen predictors:
+#[1] "P2"          "P8"          "P17"         "P21"         "P22"         "P23"         "P27"        
+#[8] "P28"         "P30"         "P34"         "P37"         "logdiffdate"
+
 # model with random forest
 set.seed(12345)
 fit.rf <- train(y=datatrain$logrevenue,x=datatrain[,which(names(datatrain) %in% predictors(fit.lasso))],
